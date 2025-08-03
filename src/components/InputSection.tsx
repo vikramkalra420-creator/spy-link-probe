@@ -61,22 +61,21 @@ export const InputSection: React.FC<InputSectionProps> = ({ onStartScraping, isL
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="spy-card rounded-xl p-8 mb-8"
+      className="saas-card rounded-lg p-8 mb-8"
     >
       <div className="text-center mb-6">
         <motion.h1 
-          className="text-4xl font-bold mb-2 text-transparent bg-clip-text"
-          style={{ backgroundImage: 'var(--gradient-primary)' }}
+          className="text-4xl font-bold mb-2 text-foreground"
           initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          🕵️ LinkedIn Intel Extractor
+          LinkedIn Scraper
         </motion.h1>
         <p className="text-muted-foreground text-lg">
-          Advanced reconnaissance tool for professional intelligence gathering
+          Extract profile data from LinkedIn URLs
         </p>
-        <div className="inline-flex items-center gap-2 mt-2 text-sm text-spy-gold">
+        <div className="inline-flex items-center gap-2 mt-2 text-sm text-saas-blue">
           <AlertCircle size={16} />
           <span>Simulation only – no real scraping involved</span>
         </div>
@@ -91,7 +90,7 @@ export const InputSection: React.FC<InputSectionProps> = ({ onStartScraping, isL
             value={urls}
             onChange={(e) => setUrls(e.target.value)}
             placeholder="Enter LinkedIn URLs (one per line)&#10;Example: https://linkedin.com/in/john-doe"
-            className="min-h-[120px] bg-input border-spy-border focus:border-spy-gold focus:ring-spy-gold font-mono text-sm"
+            className="min-h-[120px] font-sans text-sm"
             disabled={isLoading}
           />
         </div>
@@ -111,20 +110,20 @@ export const InputSection: React.FC<InputSectionProps> = ({ onStartScraping, isL
           <Button
             onClick={loadTemplate}
             variant="outline"
-            className="flex-1 border-spy-border hover:border-spy-cyan hover:bg-spy-cyan/10"
+            className="flex-1"
             disabled={isLoading}
           >
             <Download className="mr-2 h-4 w-4" />
-            Load Template (10 profiles)
+            Load Sample URLs
           </Button>
           
           <Button
             onClick={handleStartScraping}
-            className="flex-1 bg-gradient-to-r from-spy-gold to-spy-cyan hover:opacity-90 text-spy-dark font-semibold"
+            className="flex-1 bg-saas-blue hover:bg-saas-blue/90"
             disabled={isLoading || !urls.trim()}
           >
             <Search className="mr-2 h-4 w-4" />
-            {isLoading ? 'Extracting...' : 'Start Extraction'}
+            {isLoading ? 'Scraping...' : 'Start Scraping'}
           </Button>
         </div>
       </div>

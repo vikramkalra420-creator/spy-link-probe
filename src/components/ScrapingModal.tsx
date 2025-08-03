@@ -70,7 +70,7 @@ export const ScrapingModal: React.FC<ScrapingModalProps> = ({ isOpen, onClose, p
               stiffness: 300, 
               damping: 30 
             }}
-            className="relative spy-card rounded-2xl p-8 max-w-lg w-full mx-4 max-h-[90vh] overflow-y-auto"
+            className="relative saas-card rounded-lg p-8 max-w-lg w-full mx-4 max-h-[90vh] overflow-y-auto"
           >
             {/* Close button (only shows after delay) */}
             <AnimatePresence>
@@ -80,9 +80,9 @@ export const ScrapingModal: React.FC<ScrapingModalProps> = ({ isOpen, onClose, p
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   onClick={onClose}
-                  className="absolute top-4 right-4 p-2 rounded-full spy-glass hover:bg-spy-gold/20 transition-colors"
+                  className="absolute top-4 right-4 p-2 rounded-full bg-saas-light-gray hover:bg-saas-border transition-colors"
                 >
-                  <X size={20} className="text-muted-foreground hover:text-spy-gold" />
+                  <X size={20} className="text-saas-gray hover:text-foreground" />
                 </motion.button>
               )}
             </AnimatePresence>
@@ -94,12 +94,11 @@ export const ScrapingModal: React.FC<ScrapingModalProps> = ({ isOpen, onClose, p
               transition={{ delay: 0.1 }}
               className="text-center mb-8"
             >
-              <h2 className="text-2xl font-bold text-transparent bg-clip-text mb-2"
-                  style={{ backgroundImage: 'var(--gradient-primary)' }}>
-                🔍 Intelligence Extraction Active
+              <h2 className="text-2xl font-bold text-foreground mb-2">
+                Scraping Progress
               </h2>
               <p className="text-muted-foreground text-sm">
-                Neural networks are analyzing target profiles...
+                Extracting profile data from LinkedIn URLs...
               </p>
             </motion.div>
 

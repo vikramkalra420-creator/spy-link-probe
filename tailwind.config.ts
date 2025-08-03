@@ -52,13 +52,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				spy: {
-					gold: 'hsl(var(--spy-gold))',
-					cyan: 'hsl(var(--spy-cyan))',
-					purple: 'hsl(var(--spy-purple))',
-					dark: 'hsl(var(--spy-dark))',
-					surface: 'hsl(var(--spy-surface))',
-					border: 'hsl(var(--spy-border))'
+				saas: {
+					blue: 'hsl(var(--saas-blue))',
+					green: 'hsl(var(--saas-green))',
+					red: 'hsl(var(--saas-red))',
+					gray: 'hsl(var(--saas-gray))',
+					'light-gray': 'hsl(var(--saas-light-gray))',
+					border: 'hsl(var(--saas-border))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

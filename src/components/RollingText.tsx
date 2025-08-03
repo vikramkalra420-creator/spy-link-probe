@@ -58,10 +58,10 @@ export const RollingText: React.FC<RollingTextProps> = ({ progress, isActive }) 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="spy-glass rounded-lg p-4"
+        className="bg-saas-light-gray rounded-lg p-4 border border-saas-border"
       >
-        <div className="text-spy-gold text-sm uppercase tracking-wider mb-1">
-          Current Target
+        <div className="text-saas-blue text-sm font-medium mb-1">
+          Current Profile
         </div>
         <AnimatePresence mode="wait">
           <motion.div
@@ -70,7 +70,7 @@ export const RollingText: React.FC<RollingTextProps> = ({ progress, isActive }) 
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.3 }}
-            className="text-xl font-mono text-foreground"
+            className="text-lg font-medium text-foreground"
           >
             {progress.currentProfile}
           </motion.div>
@@ -86,13 +86,13 @@ export const RollingText: React.FC<RollingTextProps> = ({ progress, isActive }) 
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            className="text-spy-cyan font-mono text-sm"
+            className="text-saas-gray font-medium text-sm"
           >
             {displayText}
             <motion.span
               animate={{ opacity: [1, 0] }}
               transition={{ duration: 0.8, repeat: Infinity }}
-              className="text-spy-gold"
+              className="text-saas-blue"
             >
               |
             </motion.span>
@@ -103,12 +103,12 @@ export const RollingText: React.FC<RollingTextProps> = ({ progress, isActive }) 
       {/* Progress indicator */}
       <div className="space-y-2">
         <div className="flex justify-between text-xs text-muted-foreground">
-          <span>Progress</span>
-          <span>{progress.profilesCompleted}/{progress.totalProfiles}</span>
+          <span>Scraping Progress</span>
+          <span>{Math.round((progress.profilesCompleted / progress.totalProfiles) * 100)}%</span>
         </div>
-        <div className="w-full bg-spy-surface rounded-full h-2 overflow-hidden">
+        <div className="w-full bg-saas-light-gray rounded-full h-2 overflow-hidden border border-saas-border">
           <motion.div
-            className="h-full bg-gradient-to-r from-spy-gold to-spy-cyan"
+            className="h-full bg-saas-blue"
             initial={{ width: "0%" }}
             animate={{ 
               width: `${(progress.profilesCompleted / progress.totalProfiles) * 100}%` 
@@ -118,26 +118,27 @@ export const RollingText: React.FC<RollingTextProps> = ({ progress, isActive }) 
         </div>
       </div>
 
-      {/* Matrix-style data stream */}
-      <div className="h-24 overflow-hidden spy-glass rounded p-3">
-        <div className="space-y-1 font-mono text-xs">
-          {Array.from({ length: 8 }, (_, i) => (
+      {/* Status log */}
+      <div className="bg-saas-light-gray rounded-lg p-3 border border-saas-border">
+        <div className="space-y-1 text-xs">
+          {Array.from({ length: 4 }, (_, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -20 }}
               animate={{ 
-                opacity: [0, 1, 0.5, 0],
-                x: [-50, 0, 0, 50],
+                opacity: [0, 1, 0.7],
+                x: [-20, 0, 0],
               }}
               transition={{
-                duration: 4,
-                delay: i * 0.2,
+                duration: 2,
+                delay: i * 0.3,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="text-spy-cyan/70"
+              className="text-saas-gray flex items-center gap-2"
             >
-              {Math.random().toString(36).substring(2, 15)} → ████████████
+              <div className="w-1.5 h-1.5 bg-saas-green rounded-full"></div>
+              Extracting profile {i + 1}...
             </motion.div>
           ))}
         </div>

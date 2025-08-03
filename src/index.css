@@ -8,54 +8,54 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Spy Detective Theme Colors */
-    --background: 224 15% 5%;
-    --foreground: 0 0% 95%;
+    /* Modern SaaS Theme Colors */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-    --card: 224 20% 8%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 224 20% 8%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 47 100% 50%;
-    --primary-foreground: 224 15% 5%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 195 100% 50%;
-    --secondary-foreground: 224 15% 5%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
 
-    --muted: 224 20% 12%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 280 100% 70%;
-    --accent-foreground: 224 15% 5%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 224 20% 15%;
-    --input: 224 20% 12%;
-    --ring: 47 100% 50%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 217 91% 60%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Spy Theme Specific Colors */
-    --spy-gold: 47 100% 50%;
-    --spy-cyan: 195 100% 50%;
-    --spy-purple: 280 100% 70%;
-    --spy-dark: 224 15% 5%;
-    --spy-surface: 224 20% 8%;
-    --spy-border: 224 20% 15%;
+    /* SaaS Theme Specific Colors */
+    --saas-blue: 217 91% 60%;
+    --saas-green: 142 76% 36%;
+    --saas-red: 0 84% 60%;
+    --saas-gray: 215.4 16.3% 46.9%;
+    --saas-light-gray: 210 40% 96%;
+    --saas-border: 214.3 31.8% 91.4%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--spy-gold)), hsl(var(--spy-cyan)));
-    --gradient-surface: linear-gradient(145deg, hsl(var(--spy-surface)), hsl(224 25% 10%));
-    --gradient-glow: radial-gradient(circle at center, hsl(var(--spy-gold) / 0.3), transparent 70%);
+    --gradient-primary: linear-gradient(135deg, hsl(var(--saas-blue)), hsl(221 83% 53%));
+    --gradient-surface: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    --gradient-glow: radial-gradient(circle at center, hsl(var(--saas-blue) / 0.2), transparent 70%);
 
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(var(--spy-gold) / 0.3);
-    --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
-    --shadow-modal: 0 25px 50px -12px hsl(0 0% 0% / 0.8);
+    --shadow-glow: 0 0 20px hsl(var(--saas-blue) / 0.2);
+    --shadow-card: 0 2px 8px hsl(0 0% 0% / 0.1);
+    --shadow-modal: 0 10px 40px hsl(0 0% 0% / 0.15);
 
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -78,15 +78,6 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .light {
-    /* Light mode keeps the spy theme but with lighter backgrounds */
-    --background: 220 15% 95%;
-    --foreground: 224 15% 5%;
-    --card: 0 0% 100%;
-    --card-foreground: 224 15% 5%;
-    --border: 224 20% 85%;
-    --input: 224 20% 88%;
-  }
 }
 
 @layer base {
@@ -95,30 +86,29 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-mono;
-    background: linear-gradient(135deg, hsl(var(--background)), hsl(224 20% 3%));
+    @apply bg-background text-foreground font-sans;
     min-height: 100vh;
   }
 
-  .spy-glow {
+  .saas-glow {
     box-shadow: var(--shadow-glow);
   }
 
-  .spy-card {
-    background: var(--gradient-surface);
+  .saas-card {
+    background: hsl(var(--card));
     box-shadow: var(--shadow-card);
-    border: 1px solid hsl(var(--spy-border));
+    border: 1px solid hsl(var(--border));
   }
 
-  .spy-glass {
-    background: rgba(255, 255, 255, 0.05);
+  .saas-glass {
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid hsl(var(--border));
   }
 
   .typewriter {
     overflow: hidden;
-    border-right: 2px solid hsl(var(--spy-gold));
+    border-right: 2px solid hsl(var(--saas-blue));
     white-space: nowrap;
     animation: typewriter 2s steps(40, end), blink-caret 0.75s step-end infinite;
   }
@@ -130,17 +120,17 @@ All colors MUST be HSL.
 
   @keyframes blink-caret {
     from, to { border-color: transparent; }
-    50% { border-color: hsl(var(--spy-gold)); }
+    50% { border-color: hsl(var(--saas-blue)); }
   }
 
   @keyframes pulse-glow {
     0%, 100% { 
-      box-shadow: 0 0 20px hsl(var(--spy-gold) / 0.3);
+      box-shadow: 0 0 20px hsl(var(--saas-blue) / 0.2);
       transform: scale(1);
     }
     50% { 
-      box-shadow: 0 0 40px hsl(var(--spy-gold) / 0.6);
-      transform: scale(1.05);
+      box-shadow: 0 0 30px hsl(var(--saas-blue) / 0.4);
+      transform: scale(1.02);
     }
   }
 

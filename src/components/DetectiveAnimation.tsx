@@ -7,7 +7,7 @@ export const DetectiveAnimation: React.FC = () => {
     <div className="relative flex items-center justify-center mb-8">
       {/* Background glow effect */}
       <motion.div
-        className="absolute inset-0 rounded-full bg-spy-gold/20 blur-xl"
+        className="absolute inset-0 rounded-full bg-saas-blue/20 blur-xl"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.6, 0.3],
@@ -21,9 +21,9 @@ export const DetectiveAnimation: React.FC = () => {
 
       {/* LinkedIn logo with scan effect */}
       <motion.div
-        className="relative bg-spy-surface p-8 rounded-full border-2 border-spy-border"
+        className="relative bg-white p-8 rounded-full border-2 border-saas-border shadow-lg"
         animate={{
-          borderColor: ['hsl(var(--spy-border))', 'hsl(var(--spy-gold))', 'hsl(var(--spy-border))'],
+          borderColor: ['hsl(var(--saas-border))', 'hsl(var(--saas-blue))', 'hsl(var(--saas-border))'],
         }}
         transition={{
           duration: 2,
@@ -44,13 +44,13 @@ export const DetectiveAnimation: React.FC = () => {
         >
           <Linkedin 
             size={64} 
-            className="text-spy-cyan drop-shadow-lg" 
+            className="text-saas-blue drop-shadow-lg" 
           />
         </motion.div>
 
         {/* Scanning line effect */}
         <motion.div
-          className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-spy-gold to-transparent opacity-80"
+          className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-saas-blue to-transparent opacity-80"
           animate={{
             y: [0, 120, 0],
             opacity: [0, 1, 0],
@@ -81,10 +81,10 @@ export const DetectiveAnimation: React.FC = () => {
         <div className="relative">
           <Search 
             size={48} 
-            className="text-spy-gold drop-shadow-lg" 
+            className="text-saas-blue drop-shadow-lg" 
           />
           <motion.div
-            className="absolute inset-0 rounded-full border-2 border-spy-gold/50"
+            className="absolute inset-0 rounded-full border-2 border-saas-blue/50"
             animate={{
               scale: [1, 1.5],
               opacity: [0.5, 0],
@@ -100,7 +100,7 @@ export const DetectiveAnimation: React.FC = () => {
 
       {/* Radar sweep effect */}
       <motion.div
-        className="absolute inset-0 border-2 border-spy-purple/30 rounded-full"
+        className="absolute inset-0 border-2 border-saas-blue/30 rounded-full"
         animate={{
           scale: [1, 2],
           opacity: [0.6, 0],
